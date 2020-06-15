@@ -1,6 +1,14 @@
 const express = require("express");
+const connectDB = require("./config/db");
+const { init } = require("./models/User");
 
 const app = express();
+
+// Connect Database
+connectDB();
+
+// Init Middleware
+app.use(express.json({ extended: false }));
 
 app.get("/", (req, res) =>
   res.json({ msg: "Welcome to the ContactKeeper API..." })
@@ -14,6 +22,6 @@ app.use("/api/contacts", require("./routes/contacts"));
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`SERVER started on ${PORT}`)); 
+app.listen(PORT, () => console.log(`SERVER started on ${PORT}`));
 
-// Q69gL3HPZ1DPSSYo
+//DaOmeis7J1D0egoe

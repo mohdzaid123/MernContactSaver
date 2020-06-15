@@ -1,11 +1,14 @@
 {
-  "name": "Mernfrontoend2",
+  "name": "mernfrontoend2",
   "version": "1.0.0",
   "description": "Contact Manager app",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\"\"npm run client\""
   },
   "keywords": [],
   "author": "",
